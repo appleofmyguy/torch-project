@@ -19,3 +19,5 @@ git clone https://github.com/handrew/torch-project.git
 cd torch-project
 rm -rf .git
 ```
+
+Then, to get started, you simply modify the requirements.txt, .gitignore according to your needs, install dependencies, write download scripts, fill out relevant model definintions in `models/`, preprocessing scripts in `utils`, and write your training function in `main`. 

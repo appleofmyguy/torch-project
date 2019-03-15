@@ -1,24 +1,12 @@
 import click
-
-"""
-# other packages that might be helpful
-import random
+import torch
 import time
 import pandas as pd
+import random
 from tqdm import tqdm
 
-import gensim
-
-import nltk
-from nltk.corpus import reuters
-from nltk.tokenize import word_tokenize
-
-import torch
-from torch.utils.data import DataLoader
-
-from models import *
-"""
-
+# Custom defined
+# from models import *
 from utils import data_utils, test_utils
 
 
@@ -125,9 +113,8 @@ def test(hidden, use_model, lr, saved_to):
     use_cuda = torch.cuda.is_available()
     device = torch.device("cuda:0" if use_cuda else "cpu")
     raise NotImplementedError()
-    pass # TODO 
+    pass  # TODO
 
 
 if __name__ == "__main__":
     cli()
-
