@@ -9,3 +9,13 @@ Everyone has their own way of doing things. That's fine. Whatever floats your bo
 So, I made this because I'm sick of adapting the crappy code I find on Github. This repo is my argument for how things ought to be structured.
 
 Use it if you want. Or don't. Whatever.
+
+# How?
+
+If you find this compelling enough to adopt for your own, simply just run
+
+```
+git clone https://github.com/handrew/torch-project.git
+cd torch-project
+rm -rf .git
+```
