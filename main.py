@@ -84,13 +84,13 @@ def _train(model, device, lr,
 
 
 @cli.command()
-@click.option('--periodicity', default=10)
+@click.option('--batch_size', default=10)
 @click.option('--hidden', default=50)
 @click.option('--lr', default=0.001)
 @click.option('--save_to', default="saved_models/", help="dir for models")
 @click.option('--use_small', is_flag=True, help="for development")
 @click.option('--epochs', default=10, help="number of epochs")
-def train(periodicity, hidden, lr, save_to, use_small, epochs):
+def train(batch_size, hidden, lr, save_to, use_small, epochs):
     use_cuda = torch.cuda.is_available()
     device = torch.device("cuda:0" if use_cuda else "cpu")
 
@@ -99,7 +99,7 @@ def train(periodicity, hidden, lr, save_to, use_small, epochs):
     ###############################################
     print("=" * 50)
     datasets, dataloaders = \
-        get_train_test_dataloaders(device, use_small=use_small)
+        data_utils.get_train_test_dataloaders(batch_size)
     train_dataset, val_dataset, test_dataset = datasets
     train_dataloader, val_dataloader, test_dataloader = dataloaders
 
