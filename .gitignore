@@ -4,3 +4,4 @@
 *.xlsx
 *.bin
 *.npy
+*/.DS_Store
