@@ -1,6 +1,9 @@
-# where data loading and preprocessing code should go
 from torch.utils.data import DataLoader
 from .ExampleDataset import ExampleDataset
+
+
+# See below for documentation on dataloaders
+# https://pytorch.org/docs/stable/_modules/torch/utils/data/dataloader.html
 
 
 def get_train_test_dataloaders(batch_size):
