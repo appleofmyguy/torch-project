@@ -76,7 +76,6 @@ def _train(model, device, lr,
 @click.option('--hidden', default=50)
 @click.option('--lr', default=0.001)
 @click.option('--save_to', default="saved_models/", help="dir for models")
-@click.option('--use_small', is_flag=True, help="for development")
 @click.option('--epochs', default=10, help="number of epochs")
 def train(batch_size, hidden, lr, save_to, use_small, epochs):
     use_cuda = torch.cuda.is_available()
@@ -95,7 +94,7 @@ def train(batch_size, hidden, lr, save_to, use_small, epochs):
     # LOAD MODEL
     ###############################################
     print("=" * 50)
-    model = get_model(use_model, hidden, train_dataset.num_classes)
+    model = None  # import or construct model
     model = model.to(device)
 
     ###############################################
@@ -112,8 +111,7 @@ def train(batch_size, hidden, lr, save_to, use_small, epochs):
 def test(hidden, use_model, lr, saved_to):
     use_cuda = torch.cuda.is_available()
     device = torch.device("cuda:0" if use_cuda else "cpu")
-    raise NotImplementedError()
-    pass  # TODO
+    raise NotImplementedError("TODO")
 
 
 if __name__ == "__main__":
