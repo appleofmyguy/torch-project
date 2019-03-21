@@ -14,6 +14,20 @@ class ExampleModel(nn.Module):
     def forward(self, x):
         pass
 
+    def predict(self, x, eval_mode=False):
+        if (eval_mode):
+            self.eval()
+
+        out = self.forward(x)
+
+        if (eval_mode):
+            raise NotImplementedError("Decide how you want to choose labels")
+            predict_labels = torch.max(out, 1)[1]
+            self.train(mode=True)
+            return predict_labels
+
+        return out
+
     def save(self, path: str):
         """ Save the model to a file.
         @param path (str): path to the model
