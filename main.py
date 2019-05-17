@@ -78,6 +78,10 @@ def _train(model, device, lr,
 @click.option('--save_to', default="saved_models/", help="dir for models")
 @click.option('--epochs', default=10, help="number of epochs")
 def train(batch_size, hidden, lr, save_to, use_small, epochs):
+    """Run the training loop.
+
+    Usage: python main.py train [flags]
+    """
     use_cuda = torch.cuda.is_available()
     device = torch.device("cuda:0" if use_cuda else "cpu")
 
@@ -109,6 +113,10 @@ def train(batch_size, hidden, lr, save_to, use_small, epochs):
 @cli.command()
 @click.option('--saved_to', default="saved_models/", help="dir for models")
 def test(hidden, use_model, lr, saved_to):
+    """Run the model on test data if applicable.
+
+    Usage: python main.py test [flags]
+    """
     use_cuda = torch.cuda.is_available()
     device = torch.device("cuda:0" if use_cuda else "cpu")
     raise NotImplementedError("TODO")
